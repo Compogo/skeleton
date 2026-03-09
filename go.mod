@@ -3,10 +3,10 @@ module github.com/Compogo/sceleton
 go 1.26.1
 
 require (
-	github.com/Compogo/compogo v0.0.14 // indirect
-	github.com/Compogo/dig v0.0.3 // indirect
-	github.com/Compogo/logrus v0.0.6 // indirect
-	github.com/Compogo/viper v0.0.5 // indirect
+	github.com/Compogo/compogo v0.0.15 // indirect
+	github.com/Compogo/dig v0.0.4 // indirect
+	github.com/Compogo/logrus v0.0.7 // indirect
+	github.com/Compogo/viper v0.0.6 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
