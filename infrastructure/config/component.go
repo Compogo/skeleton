@@ -16,7 +16,7 @@ var Component = &component.Component{
 			flagSet.StringVar(&config.Test, TestFieldName, TestDefault, "")
 		})
 	}),
-	PreRun: component.StepFunc(func(container container.Container) error {
+	Configuration: component.StepFunc(func(container container.Container) error {
 		return container.Invoke(Configuration)
 	}),
 }

@@ -26,7 +26,7 @@ func NewRootCommand() (*cobra.Command, error) {
 			Dependencies: component.Components{
 				config.Component,
 			},
-			Run: component.StepFunc(func(container container.Container) error {
+			PreExecute: component.StepFunc(func(container container.Container) error {
 				return container.Invoke(func(config *config.Config, logger logger.Logger) {
 					logger.Infof("config test field value - %s", config.Test)
 				})
