@@ -2,6 +2,7 @@ package cli
 
 import (
 	"context"
+	"time"
 
 	"github.com/Compogo/compogo"
 	"github.com/Compogo/compogo/component"
@@ -9,6 +10,7 @@ import (
 	"github.com/Compogo/compogo/logger"
 	"github.com/Compogo/dig"
 	"github.com/Compogo/logrus"
+	"github.com/Compogo/repeater"
 	"github.com/Compogo/sceleton/infrastructure/config"
 	"github.com/Compogo/viper"
 	"github.com/spf13/cobra"
@@ -25,10 +27,19 @@ func NewRootCommand() (*cobra.Command, error) {
 			Name: "component",
 			Dependencies: component.Components{
 				config.Component,
+				repeater.Component,
 			},
 			PreExecute: component.StepFunc(func(container container.Container) error {
 				return container.Invoke(func(config *config.Config, logger logger.Logger) {
 					logger.Infof("config test field value - %s", config.Test)
+				})
+			}),
+			Execute: component.StepFunc(func(container container.Container) error {
+				return container.Invoke(func(r repeater.Repeater, logger logger.Logger, config *config.Config) error {
+					return r.AddProcess(repeater.NewTask("test", time.Second, func(ctx context.Context) error {
+						logger.Infof("log from task: config test field value - %s", config.Test)
+						return nil
+					}))
 				})
 			}),
 			Wait: component.WaitFunc(func(ctx context.Context, container container.Container) error {
