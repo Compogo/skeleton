@@ -3,18 +3,18 @@ module github.com/Compogo/sceleton
 go 1.26.1
 
 require (
-	github.com/Compogo/compogo v0.0.34
-	github.com/Compogo/dig v0.0.8
-	github.com/Compogo/logrus v0.0.15
-	github.com/Compogo/viper v0.0.12
+	github.com/Compogo/compogo v1.0.0-rc1
+	github.com/Compogo/dig v1.0.0-rc1
+	github.com/Compogo/logrus v1.0.0-rc1
+	github.com/Compogo/repeater v1.0.0-rc1
+	github.com/Compogo/viper v1.0.0-rc1
 	github.com/spf13/cobra v1.10.2
 )
 
 require (
-	github.com/Compogo/repeater v0.0.5 // indirect
-	github.com/Compogo/runner v0.0.14 // indirect
-	github.com/Compogo/tools v0.0.1 // indirect
-	github.com/Compogo/types v0.0.15 // indirect
+	github.com/Compogo/runner v1.0.2-rc1 // indirect
+	github.com/Compogo/tools v1.0.0 // indirect
+	github.com/Compogo/types v1.0.0 // indirect
 	github.com/fsnotify/fsnotify v1.10.1 // indirect
 	github.com/go-viper/mapstructure/v2 v2.5.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
